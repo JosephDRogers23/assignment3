@@ -13,6 +13,7 @@
 			$email="";
 			$age=0;
 		}
+
 		function __construct_multiple($n, $e, $a)
 		{
 			$name = $n;
@@ -35,6 +36,10 @@
 		function produce_output()
 		{
 			return output($age, strlen($name));
+		}
+		function __isset($name)
+		{
+			return $name!="";
 		}
 
 		#Returns age to the power of number of letters in user's name.
