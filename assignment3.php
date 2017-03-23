@@ -1,4 +1,5 @@
 <?php
+
 include 'ParentClass.php';
 include 'ChildClass.php';
 
@@ -8,9 +9,8 @@ if($_POST)
 	$n = $post['name'];
 	$e = $post['email'];
 	$a = $post['age'];
-	var $person = new ParentClass($n, $e, $a);
-	var $output = $person.produce_output();
-
+	$person = new ParentClass;
+	$output = $person.produce_output();
 }
 
 ?>

@@ -3,9 +3,9 @@
 
 	class ParentClass {
 
-		var $name;
-		var $email;
-		var $age;
+		public $name="";
+		public $email="";
+		public $age=0;
 		function __construct()
 		{
 			echo "In constructor!";

@@ -3,9 +3,9 @@
 
 	class ChildClass extends ParentClass {
 
-		var $email;
-		var $name
-		var $age;
+		public $email = "";
+		public $name = "";
+		public $age = 0;
 
 		function __constructor()
 		{
