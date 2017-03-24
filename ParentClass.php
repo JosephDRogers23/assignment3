@@ -3,57 +3,65 @@
 
 	class ParentClass {
 
-		public $name="";
-		public $email="";
-		public $age=0;
-		function __construct()
+		var $name="";
+		var $email="";
+		var $age=0;
+		function __construct($n, $e, $a)
 		{
-			echo "In constructor!";
-			$name="";
-			$email="";
-			$age=0;
+			$this->name=$n;
+			$this->email=$e;
+			$this->age=$a;
 		}
 
-		function __construct_multiple($n, $e, $a)
+		/*function __constructMultiple($n, $e, $a)
 		{
-			$name = $n;
-			$email = $e;
-			$age = $a;
-		}
-		function set_name($n)
-		{
-			$name = $n;
-		}
-		function set_email($e)
-		{
-			$email = $e;
-		}
-		function set_age($a)
-		{
-			$age = $a;
+			$this->name = $n;
+			$this->email = $e;
+			$this->age = $a;
+		}*/
+
+		function setName($n) {
+			$this->name = $n;
 		}
 
-		function produce_output()
-		{
-			return output($age, strlen($name));
+		function setEmail($e) {
+			$this->email = $e;
 		}
-		function __isset($name)
-		{
-			return $name!="";
+
+		function setAge($a) {
+			$this->age = $a;
+		}
+
+		function getName() {
+			return $this->name;
+		}
+
+		function getEmail() {
+			return $this->email;
+		}
+
+		function getAge() {
+			return $this->age;
 		}
 
 		#Returns age to the power of number of letters in user's name.
-		function output($a, $n)
-		{
-			if($n==0)
-			{
+		function output($a, $n) {
+			if ($a<1) {
 				return 1;
 			}
-			else
-			{
-				 return output($a, $n-1);
+			else {
+				 return $n * $this->output($a-1, $n);
 			 }
 		}
+		function produceOutput() {
+
+			return $this->output($this->age, strlen($this->name));
+		}
+		function __isset($name) {
+			return $name!="";
+		}
+
+
 
 
 	}
